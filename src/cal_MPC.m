@@ -35,6 +35,6 @@ f = X_k'*E; %由于quadprog函数的定义，需要把其写成矩阵相乘形�
 
 %基于实际情况，给输入加约束
 
-U_k = quadprog(H,f,D,b,Aeq,Beq,lb,ub);%求解最优的U_k值
+U_k = quadprog((H+H')/2,f,D,b,Aeq,Beq,lb,ub);%求解最优的U_k值
 end
 

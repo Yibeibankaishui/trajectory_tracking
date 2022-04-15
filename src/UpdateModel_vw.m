@@ -4,6 +4,7 @@ function [X_k_1] = UpdateModel_vw(X_k, v_k, w_k, u, T)
 X_k_1 = [(v_k + u(1)) * T * cos(X_k(3));
             (v_k + u(1)) * T * sin(X_k(3));
             (w_k + u(2)) * T] + X_k;
+X_k_1(3) = mod(X_k_1(3), 2*pi);
 
 end
 

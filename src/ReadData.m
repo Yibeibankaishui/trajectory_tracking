@@ -28,8 +28,10 @@ for i = 0:total-1
     ind = inds(1);
     Latt(i+1) = Lattitude(ind);
     Long(i+1) = Longitude(ind);
-    Head(i+1) = Heading(ind);
+    Head(i+1) = Heading(ind)/360*2*pi;
 end
-
+Latt(1:42) = [];
+Long(1:42) = [];
+Head(1:42) = [];
 end
 
